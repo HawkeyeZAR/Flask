@@ -1,0 +1,65 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<section id="contact" class="content-section text-center">
+	<div class="contact-section">
+		<div class="container">
+			<h2>Contact Me</h2>
+			<p>Feel free to give me a shout using the contact form or visit me on Linkedin.<br>Also feel free to go check out some of my python source code on github.</p>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					{% if success %}
+					  <div class="alert alert-success">Your message has been sent.</div>
+					{% else %}
+						{% for message in form.name.errors %}
+						  <div class="flash alert alert-danger">{{ message }}</div>
+						{% endfor %}
+						
+						{% for message in form.email.errors %}
+						  <div class="flash alert alert-danger">{{ message }}</div>
+						{% endfor %}
+						 
+						{% for message in form.subject.errors %}
+						  <div class="flash alert alert-danger">{{ message }}</div>
+						{% endfor %}
+						
+						{% for message in form.message.errors %}
+						  <div class="flash alert alert-danger">{{ message }}</div>
+						{% endfor %}
+						<form class="form-horizontal" action="{{ url_for('contact') }}" method="POST" role="form">
+								{{form.hidden_tag()}}
+								<div class="form-group">
+								  {{ form.name(class="form-control", placeholder="First Name", **{'data-validation':'required'}) }}
+								</div>
+								<br/>
+								<div class="form-group">
+								  {{ form.email(class="form-control", placeholder="Enter email", **{'data-validation':'email'}) }}
+								</div>
+								<br/>
+								<div class="form-group">
+								  {{ form.subject(class="form-control", placeholder="Subject", **{'data-validation':'required'}) }}
+								</div>
+								<div class="form-group">
+								  {{ form.message(class="form-control", placeholder="What's on your mind?", **{'data-validation':'required'}) }}
+								</div>
+								<div class="form-inline row">
+								  <div class="form-group col-sm-2 col-sm-offset-4">
+								    {{ form.submit(class="btn btn-default") }}
+								  </div>
+								</div>
+						</form>
+						<hr>
+						<h3>Linkedin and Github links</h3>
+						  <ul class="list-inline banner-social-buttons">
+							<li><a href="https://www.linkedin.com/in/jack-ackermann/" class="btn btn-default btn-lg"><i class="fa fa-linkedin"> <span class="network-name">Linkedin</span></i></a></li>
+							<li><a href="https://github.com/HawkeyeZAR?tab=repositories" class="btn btn-default btn-lg"><i class="fa fa-github"> <span class="network-name">Github</span></i></a></li>
+						  </ul>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
