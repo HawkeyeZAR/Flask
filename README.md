@@ -5,8 +5,8 @@
 
 Working Flask Templates.
 ---------------------------------
-This is a working Contact page
-written in in python using Flask	
+More templates to come.
+	
 ---------------------------------		
 
 > **Note:**
@@ -14,4 +14,4 @@ written in in python using Flask
 > - My various Flask Templates will be saved here.
 
 
-![enter image description here](http://i65.tinypic.com/2mhd4ef.png)
+
