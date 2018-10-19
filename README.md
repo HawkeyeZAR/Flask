@@ -1,17 +1,17 @@
-﻿Flask Templates
-===================
+﻿Flask 
+======
 ![enter image description here](http://i65.tinypic.com/2mhd4ef.png) 
 
 
-Working Flask Templates.
+Flask Templates and projects.
 ---------------------------------
-More templates to come.
+Will add over time.
 	
 ---------------------------------		
 
 > **Note:**
 
-> - My various Flask Templates will be saved here.
+> - My various Flask Templates and projects will be saved here.
 
 
 
